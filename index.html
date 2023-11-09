@@ -5,10 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>s232763 | TINF23AI2</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    Hello World!
+    <div class="task-list">
+        <input placeholder="Search..." type="search" />
+        <hr>
+        <p id="no-tasks">No tasks found.</p>
+    </div>
+    <template id="task-template">
+        <a class="task-card">
+            <img src="/assets/icon-link.svg" />
+            <div class="task-info">
+                <h2>Task Title</h2>
+                <p></p>
+            </div>
+        </a>
+    </template>
+    <script defer src="./index.js"></script>
 </body>
 
 </html>
