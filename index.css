@@ -31,13 +31,13 @@ p {
 }
 
 .task-list {
-    height: 50%;
     display: flex;
     flex-direction: column;
     gap: var(--spacing);
     background-color: white;
     padding: var(--spacing);
     height: 100%;
+    width: max(60%, 40rem);
 }
 
 .btn {
@@ -53,7 +53,6 @@ p {
     display: flex;
     align-items: center;
     gap: var(--spacing);
-    width: 100%;
 }
 
 .task-card .task-info {
