@@ -1,15 +1,15 @@
 const tasks = [
   {
-    path: "2.1.3",
-    title: "Erste HTML Seite",
-    date: "2023-11-09T11:21:57Z",
-  },
-  {
     path: "2.1.5",
     title: "Kreative HTML Seite",
     date: "2023-11-09T11:07:57Z",
   },
-];
+  {
+    path: "2.1.3",
+    title: "Erste HTML Seite",
+    date: "2023-11-09T11:21:57Z",
+  },
+].map((t) => ({ ...t, date: new Date(t.date) }));
 
 const taskList = document.querySelector(".task-list");
 const template = document.querySelector("#task-template");
@@ -22,7 +22,7 @@ for (const task of tasks) {
   const path = `${taskPath[0]}_${taskPath[1]}/${taskPath[2]}.html`;
   anchor.href = path;
 
-  const date = new Date(task.date).toISOString().slice(0, 10);
+  const date = task.date.toISOString().slice(0, 10);
   clone.querySelector("p").textContent = `Added on ${date}`;
 
   clone.querySelector("button").addEventListener("click", (e) => {
