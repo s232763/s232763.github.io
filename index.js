@@ -1,15 +1,22 @@
 const tasks = [
   {
+    path: "2.1.3",
+    title: "Erste HTML Seite",
+    date: "2023-11-09T11:21:57Z",
+  },
+  {
     path: "2.1.5",
     title: "Kreative HTML Seite",
     date: "2023-11-09T11:07:57Z",
   },
   {
-    path: "2.1.3",
-    title: "Erste HTML Seite",
-    date: "2023-11-09T11:21:57Z",
+    path: "2.2.3",
+    title: "Links, Bilder & Tabellen",
+    date: "2023-11-14T13:13:21Z",
   },
-].map((t) => ({ ...t, date: new Date(t.date) }));
+]
+  .reverse()
+  .map((t) => ({ ...t, date: new Date(t.date) }));
 
 const taskList = document.querySelector(".task-list");
 const template = document.querySelector("#task-template");
