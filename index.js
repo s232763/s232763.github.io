@@ -11,7 +11,7 @@ const tasks = [
   },
   {
     path: "2.2.3",
-    title: "Links, Bilder & Tabellen",
+    title: "Geographie",
     date: "2023-11-14T13:13:21Z",
   },
 ]
