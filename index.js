@@ -14,6 +14,7 @@ const tasks = [
     title: "Geographie",
     date: "2023-11-14T13:13:21Z",
   },
+  { path: "2.3.4", title: "Forms", date: "2023-11-16T11:15:57Z" },
 ]
   .reverse()
   .map((t) => ({ ...t, date: new Date(t.date) }));
