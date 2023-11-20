@@ -1,16 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passierschein A38</title>
+    <style>
+      body {
+        margin: 40px auto;
+        max-width: 650px;
+        line-height: 1.6;
+        color: #444;
+        font-family: sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      fieldset {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .captcha label {
+        font-family: monospace;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Passierschein A38</h1>
+    <p>
+      Um den Passierschein A38 zu erhalten, können Sie einfach das untenstehende
+      Formular ausfüllen.
+    </p>
+    <p>
+      Bitte beachten Sie, dass Sie das Formular J15 benötigen, damit wir eine
+      Bearbeitung Ihrer Anfrage innerhalb der nächsten Jahre garantieren können.
+    </p>
     <form>
-        <input name="name">
-        <button>Submit</button>
+      <fieldset>
+        <legend>Persönliches</legend>
+        <label>Name <input name="last-name" /></label>
+        <label>Vorname <input name="first-name" /></label>
+        <label>Alter (von 0-100)<input type="range" name="age" /></label>
+        <label>Augenfarbe <input type="color" name="eye-color" /></label>
+        <label for="duck-horse"
+          >Würden Sie lieber gegen 10 Pferde kämpfen, die Entengröße haben oder
+          gegen eine Ente, die so groß wie ein Pferd ist? (mind. 1000 Wörter)
+        </label>
+        <textarea name="duck-horse" id="duck-horse"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>J15 Formular</legend>
+        <label>Datei <input type="file" accept=".pdf" name="j15-file" /></label>
+        <label>Unterschrieben am <input type="date" name="j15-date" /></label>
+      </fieldset>
+      <fieldset>
+        <legend>Social Media</legend>
+        <p>
+          Wir benötigen Ihre Zugangsdaten zu einem Ihrer Social-Media-Accounts.
+          Bitte wählen Sie eine Plattform aus.
+        </p>
+        <label>
+          <input type="radio" name="social-media-platform" />
+          Facebook
+        </label>
+        <label>
+          <input type="radio" name="social-media-platform" />
+          Instagram
+        </label>
+        <label>
+          <input type="radio" name="social-media-platform" />
+          Twitter
+        </label>
+        <label>
+          <input type="radio" name="social-media-platform" />
+          BeReal
+        </label>
+        <label>Benutzername <input name="social-media-name" /></label>
+        <label
+          >Passwort <input type="password" name="social-media-password"
+        /></label>
+      </fieldset>
+      <fieldset class="captcha">
+        <legend>CAPTCHA</legend>
+        <p>
+          Beweisen Sie bitte ihre Menschlichkeit, indem Sie alle Codesnippets
+          auswählen, die <strong>nicht</strong> in eine Endlosschleife geraten.
+        </p>
+        <label>
+          <input type="checkbox" name="captcha-1" />
+          const fib = (n) => n &lt; 2 ? n : (fib(n-1) + fib(n-2)); fib(5);
+        </label>
+        <label>
+          <input type="checkbox" name="captcha-2" />
+          let n = 0; while (n &gt; 1) {n--;}
+        </label>
+        <label>
+          <input type="checkbox" name="captcha-3" />
+          for (let i = 1; i &lt; 5; i *= 0.9) {i *= 1.2;}
+        </label>
+        <label>
+          <input type="checkbox" name="captcha-4" />
+          let n = 0; while (0.1 + 0.2 != 0.3) {n++;}
+        </label>
+        <label for="captcha-reasoning">Begründen Sie:</label>
+        <textarea name="captcha-reasoning" id="captcha-reasoning"></textarea>
+      </fieldset>
+      <button>Submit</button>
     </form>
     <pre id="form-data"></pre>
-    <script src="../scripts/form.js" defer></script>
-</body>
+    <script src="./4.js" defer></script>
+  </body>
 </html>
