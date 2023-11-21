@@ -30,6 +30,14 @@
         font-family: monospace;
         display: block;
       }
+
+      .first-name {
+        display: none;
+      }
+
+      body:focus-within .name:not(:focus-within) ~ .first-name {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -39,14 +47,14 @@
       Formular ausfüllen.
     </p>
     <p>
-      Bitte beachten Sie, dass Sie das Formular J15 benötigen, damit wir eine
+      Bitte beachten Sie, dass Sie das Formular B65 benötigen, damit wir eine
       Bearbeitung Ihrer Anfrage innerhalb der nächsten Jahre garantieren können.
     </p>
     <form>
       <fieldset>
         <legend>Persönliches</legend>
-        <label>Name <input name="last-name" /></label>
-        <label>Vorname <input name="first-name" /></label>
+        <label class="name">Name <input name="last-name" /></label>
+        <label class="first-name">Vorname <input name="first-name" /></label>
         <label>Alter (von 0-100)<input type="range" name="age" /></label>
         <label>Augenfarbe <input type="color" name="eye-color" /></label>
         <label for="duck-horse"
@@ -56,15 +64,15 @@
         <textarea name="duck-horse" id="duck-horse"></textarea>
       </fieldset>
       <fieldset>
-        <legend>J15 Formular</legend>
-        <label>Datei <input type="file" accept=".pdf" name="j15-file" /></label>
-        <label>Unterschrieben am <input type="date" name="j15-date" /></label>
+        <legend>B65 Formular</legend>
+        <label>Datei <input type="file" accept=".pdf" name="b65-file" /></label>
+        <label>Unterschrieben am <input type="date" name="b65-date" /></label>
       </fieldset>
       <fieldset>
         <legend>Social Media</legend>
         <p>
-          Wir benötigen Ihre Zugangsdaten zu einem Ihrer Social-Media-Accounts.
-          Bitte wählen Sie eine Plattform aus.
+          Wir benötigen Zugangsdaten zu einem Ihrer Social-Media-Accounts. Bitte
+          wählen Sie eine Plattform aus.
         </p>
         <label>
           <input type="radio" name="social-media-platform" value="facebook" />
